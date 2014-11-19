@@ -1,1 +1,1 @@
-Hello. It's readme file.
+Added new folders: css, pics, img
