@@ -4,112 +4,144 @@
         <title>Pink</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
         <link href="css/styles.css" rel="stylesheet">
+        <link href="css/normalize.css" rel="stylesheet">
   </head>
-  <body>
-		<header>
-			<div class="top-line">
-				<div class="logo"><h1>Pink</h1></div>
-				<a class="drop-menu-link close-menu-link" href="#"></a>
+  <body class="b-page">
+		<header class="l-head">
+			<div class="l-head__top clearfix"> 
+				<div class="l-head__l">
+					<section class="b-logo">
+						<h1 class="b-logo__text">Pink</h1>
+					</section>
+				</div>
+				<div class="l-head__c">
+					<nav class="b-main-menu">
+						<ul class="b-main-menu__list">
+							<li class="b-main-menu__item"><a href="#">Информация</a></li>
+							<li class="b-main-menu__item"><a href="#">Возможности</a></li>
+							<li class="b-main-menu__item"><a href="#">Отзывы</a></li>
+							<li class="b-main-menu__item"><a href="#">Стоимость</a></li>					
+						</ul>
+					</nav>
+				</div>
+				<div class="l-head__r">
+					<a class="b-drop-link" href="#"></a>
+				</div>
 			</div>
-			<nav class="drop-menu">
-				<ul>
-					<li><a href="">Информация</a></li>
-					<li><a href="">Возможности</a></li>
-					<li><a href="">Отзывы</a></li>
-					<li><a href="">Стоимость</a></li>					
-				</ul>
-			</nav>
-			<div class="slogan">Взгяните на жизнь иначе!</div>
+			<section class="l-promo">
+				<div class="l-promo__slogan">
+					<div class="b-slogan">Взгляните на жизнь иначе!</div>
+				</div>
+				<div class="l-promo__download">
+					<div class="b-download">
+						<a class="b-download__link" href="#">Скачать приложение</a>
+						<div class="b-download__platforms">Доступно для iPhone, iPad, Android, Windows Phone, Mac OS, Windows 8</div>
+					</div>
+				</div>
+				<div class="l-promo__banner">
+					<div class="hand-with-iphone"></div>
+				</div>
+			</section>
 		</header>
 		<main>
-			<section class="download-section">
-				<a href="#" class="btn">Скачать приложение</a>
-				<p>Доступно для iPhone, iPad, Android, Windows Phone, Mac OS, Windows 8</p>
-			</section>
-			<section class="benefits">
-				<p>Устали от серости мегаполиса?</p>
-				<p>Нам есть что вам предложить!</p>
-				<ul>
-					<li>
-						<h3>Поднимает настроение</h3>
-						<p>Приложение позволит вам победить осеннюю хандру и депрессию буквально в несколько кликов!</p>
-					</li>
-					<li>
-						<h3>Меняет мир вокруг</h3>
-						<p>Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект.</p>
-					</li>
-					<li>
-						<h3>Заводит новых друзей</h3>
-						<p>Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых.</p>
-					</li>
-				</ul>
-			</section>
-			<section class="slider-references">
-			  <input type="radio" id="btn-11" name="toggle" checked>
-        <input type="radio" id="btn-12" name="toggle">
-        <input type="radio" id="btn-13" name="toggle">
-        <div class="slider-controls">
-          <label for="btn-11"></label>
-          <label for="btn-12"></label>
-          <label for="btn-13"></label>
-        </div>
-        <div class="slider-frame">
-        	<div class="slides-list">
-        		 <div class="slide-item">
-        		 		<h3>Николай Петров</h3>
-        		 		<p>«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»</p>
-        		 </div>
-        		  <div class="slide-item">
-        		 		<h3>Николай Петров</h3>
-        		 		<p>«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»</p>
-        		 </div>
-        		  <div class="slide-item">
-        		 		<h3>Николай Петров</h3>
-        		 		<p>«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»</p>
-        		 </div>
-        	</div>             
-        </div>
-			</section>
-			<section class="slider-prices">
-			  <input type="radio" id="btn-21" name="toggle" checked>
-        <input type="radio" id="btn-22" name="toggle">
-        <input type="radio" id="btn-23" name="toggle">
-        <div class="slider-controls">
-          <label for="btn-21"></label>
-          <label for="btn-22"></label>
-          <label for="btn-23"></label>
-        </div>
-        <div class="slider-frame">
-        	<div class="slides-table">
-        		<div class="slide-column">
-							<div class="badge hit">Стандарт <span>3,99 USD</span></div>
-							<div class="check">Розовый фильтр</div>
-							<div class="check">Смайлики</div>
-							<div class="no-check">Комментарии</div>
-        		</div>
-        		<div class="slide-column">
-							<div class="badge hit">Стандарт <span>3,99 USD</span></div>
-							<div class="check">Розовый фильтр</div>
-							<div class="check">Смайлики</div>
-							<div class="no-check">Комментарии</div>
-        		</div>
-        		<div class="slide-column">
-							<div class="badge hit">Стандарт <span>3,99 USD</span></div>
-							<div class="check">Розовый фильтр</div>
-							<div class="check">Смайлики</div>
-							<div class="no-check">Комментарии</div>
-        		</div>
-        	</div>             
-        </div>
-			</section>
+			<div class="l-main-row1">
+				<div class="b-offer">
+					<p>Устали от серости мегаполиса?</p>
+					<p>Нам есть что вам предложить!</p>
+				</div>
+			</div>
+			<div class="l-main-row2">
+				<section class="b-benefits">
+					<ul class="b-extended-list">
+						<li class="b-extended-list__item">
+							<h3>Поднимает настроение</h3>
+							<p>Приложение позволит вам победить осеннюю хандру и депрессию буквально в несколько кликов!</p>
+						</li>
+						<li class="b-extended-list__item">
+							<h3>Меняет мир вокруг</h3>
+							<p>Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект.</p>
+						</li>
+						<li class="b-extended-list__item">
+							<h3>Заводит новых друзей</h3>
+							<p>Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых.</p>
+						</li>
+					</ul>
+				</section>
+				<div class="b-smile-phone"></div>
+			</div>
+			<div class="l-main-row3">
+				<section class="b-slider-references">
+					  <input type="radio" id="btn-11" name="toggle" checked>
+		        <input type="radio" id="btn-12" name="toggle">
+		        <input type="radio" id="btn-13" name="toggle">
+		        <div class="b-slider-references__controls">
+		          <label for="btn-11" class="b-slide-control"></label>
+		          <label for="btn-12" class="b-slide-control"></label>
+		          <label for="btn-13" class="b-slide-control"></label>
+		        </div>
+		        <div class="b-slider-references__frame">
+		        	<div class="b-slider-references__slides-list">
+		        		 <div class="b-slider-references__slide-item">
+		        		 		<h3>Николай Петров</h3>
+		        		 		<p>«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»</p>
+		        		 </div>
+		        		  <div class="b-slider-references__slide-item">
+		        		 		<h3>Николай Петров</h3>
+		        		 		<p>«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»</p>
+		        		 </div>
+		        		  <div class="b-slider-references__slide-item">
+		        		 		<h3>Николай Петров</h3>
+		        		 		<p>«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»</p>
+		        		 </div>
+		        	</div>             
+		        </div>
+				</section>
+			</div>
+			<div class="l-main-row4">
+				<section class="b-slider-table">
+					  <input type="radio" id="btn-21" name="toggle" checked>
+		        <input type="radio" id="btn-22" name="toggle">
+		        <input type="radio" id="btn-23" name="toggle">
+		        <div class="b-slider-table__labels">
+		          <label for="btn-21" class="b-slide-control"></label>
+		          <label for="btn-22" class="b-slide-control"></label>
+		          <label for="btn-23" class="b-slide-control"></label>
+		        </div>
+	        <div class="b-slider-table__frame">
+	        	<div class="b-slider-table__table">
+							<div class="b-slider-table__column">
+								<div>Стандарт <span>3,99 USD</span></div>
+								<div class="b-slider-table__cell b-slider-table__cell_yes">Розовый фильтр</div>
+								<div class="b-slider-table__cell b-slider-table__cell_yes">Смайлики</div>
+								<div class="b-slider-table__cell b-slider-table__cell_no">Комментарии</div>
+							</div>
+							<div class="b-slider-table__column">
+								<div class="b-slider-table__cell b-slider-table__cell_badge b-slider-table__cell_hit">Стандарт <span>3,99 USD</span></div>
+								<div class="b-slider-table__cell b-slider-table__cell_yes">Розовый фильтр</div>
+								<div class="b-slider-table__cell b-slider-table__cell_yes">Смайлики</div>
+								<div class="b-slider-table__cell b-slider-table__cell_no">Комментарии</div>
+							</div>
+							<div class="b-slider-table__column">
+								<div>Стандарт <span>3,99 USD</span></div>
+								<div class="b-slider-table__cell b-slider-table__cell_yes">Розовый фильтр</div>
+								<div class="b-slider-table__cell b-slider-table__cell_yes">Смайлики</div>
+								<div class="b-slider-table__cell b-slider-table__cell_no">Комментарии</div>
+							</div>
+	        	</div>             
+	        </div>
+				</section>
+			</div>
 		</main>
-		<footer>
-			<section class="contacts">
-				<p>Остались вопросы? Свяжитесь с нами</p>
-				<p>Звоните: <span>8 (800) 1000 900</span></p>
-				<p>Пишите: <span>hello@pinkapp.ru</span></p>
-				<p>Приезжайте в гости: <span>Санкт-Петербург, Невский проспект, д. 20</span></p>
+		<footer>			
+			<section class="b-contacts-ext">
+				<div class="b-contacts-ext__text">
+					<p>Остались вопросы?</p> <p>Свяжитесь с нами</p>
+					<p>Звоните: <span>8 (800) 1000 900</span></p>
+					<p>Пишите: <span>hello@pinkapp.ru</span></p>
+					<p>Приезжайте в гости: <span>Санкт-Петербург, Невский&nbsp;проспект,&nbsp;д.&nbsp;20</span></p>
+				</div>
 			</section>
 		</footer>
   </body>
