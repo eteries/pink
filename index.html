@@ -5,15 +5,16 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
         <link href="css/styles.css" rel="stylesheet">
         <link href="css/normalize.css" rel="stylesheet">
   </head>
   <body class="b-page">
 		<header class="l-head">
-			<div class="l-head__top clearfix"> 
+			<div class="l-head__top"> 
 				<div class="l-head__l">
 					<section class="b-logo">
-						<h1 class="b-logo__text">Pink</h1>
+						<div class="b-logo__logo"></div>
 					</section>
 				</div>
 				<div class="l-head__c">
@@ -27,16 +28,21 @@
 					</nav>
 				</div>
 				<div class="l-head__r">
-					<a class="b-drop-link" href="#"></a>
+					<a class="b-drop-link b-drop-link_closed" href="#"></a>
 				</div>
 			</div>
 			<section class="l-promo">
 				<div class="l-promo__slogan">
-					<div class="b-slogan">Взгляните на жизнь иначе!</div>
+					<div class="b-slogan">Взгляните на жизнь <br>иначе!</div>
 				</div>
 				<div class="l-promo__download">
 					<div class="b-download">
 						<a class="b-download__link" href="#">Скачать приложение</a>
+						<div class="b-icons">
+							<div class="b-icons__icon	b-icons__icon_apple"></div>
+							<div class="b-icons__icon	b-icons__icon_android"></div>
+							<div class="b-icons__icon	b-icons__icon_windows"></div>
+						</div>
 						<div class="b-download__platforms">Доступно для iPhone, iPad, Android, Windows Phone, Mac OS, Windows 8</div>
 					</div>
 				</div>
@@ -73,9 +79,9 @@
 			</div>
 			<div class="l-main-row3">
 				<section class="b-slider-references">
-					  <input type="radio" id="btn-11" name="toggle" checked>
-		        <input type="radio" id="btn-12" name="toggle">
-		        <input type="radio" id="btn-13" name="toggle">
+					  <input type="radio" id="btn-11" name="toggle1" checked>
+		        <input type="radio" id="btn-12" name="toggle1">
+		        <input type="radio" id="btn-13" name="toggle1">
 		        <div class="b-slider-references__controls">
 		          <label for="btn-11" class="b-slide-control"></label>
 		          <label for="btn-12" class="b-slide-control"></label>
@@ -88,12 +94,12 @@
 		        		 		<p>«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»</p>
 		        		 </div>
 		        		  <div class="b-slider-references__slide-item">
-		        		 		<h3>Николай Петров</h3>
-		        		 		<p>«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»</p>
+		        		 		<h3>Алексей Иванов</h3>
+		        		 		<p>«Я познакомился со своей будущей женой в комментариях к выложенной фотографии!. А ещё это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи!»</p>
 		        		 </div>
 		        		  <div class="b-slider-references__slide-item">
-		        		 		<h3>Николай Петров</h3>
-		        		 		<p>«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»</p>
+		        		 		<h3>Мария Сидорова</h3>
+		        		 		<p>«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи!»</p>
 		        		 </div>
 		        	</div>             
 		        </div>
@@ -101,48 +107,76 @@
 			</div>
 			<div class="l-main-row4">
 				<section class="b-slider-table">
-					  <input type="radio" id="btn-21" name="toggle" checked>
-		        <input type="radio" id="btn-22" name="toggle">
-		        <input type="radio" id="btn-23" name="toggle">
-		        <div class="b-slider-table__labels">
-		          <label for="btn-21" class="b-slide-control"></label>
-		          <label for="btn-22" class="b-slide-control"></label>
-		          <label for="btn-23" class="b-slide-control"></label>
+					  <input type="radio" id="btn-21" name="toggle2">
+		        <input type="radio" id="btn-22" name="toggle2" checked>
+		        <input type="radio" id="btn-23" name="toggle2">
+		        <div class="b-slider-table__controls">
+		          <label for="btn-21" class="b-slide-control b-slide-control_dark"></label>
+		          <label for="btn-22" class="b-slide-control b-slide-control_dark"></label>
+		          <label for="btn-23" class="b-slide-control b-slide-control_dark"></label>
 		        </div>
-	        <div class="b-slider-table__frame">
-	        	<div class="b-slider-table__table">
-							<div class="b-slider-table__column">
-								<div>Стандарт <span>3,99 USD</span></div>
-								<div class="b-slider-table__cell b-slider-table__cell_yes">Розовый фильтр</div>
-								<div class="b-slider-table__cell b-slider-table__cell_yes">Смайлики</div>
-								<div class="b-slider-table__cell b-slider-table__cell_no">Комментарии</div>
-							</div>
-							<div class="b-slider-table__column">
-								<div class="b-slider-table__cell b-slider-table__cell_badge b-slider-table__cell_hit">Стандарт <span>3,99 USD</span></div>
-								<div class="b-slider-table__cell b-slider-table__cell_yes">Розовый фильтр</div>
-								<div class="b-slider-table__cell b-slider-table__cell_yes">Смайлики</div>
-								<div class="b-slider-table__cell b-slider-table__cell_no">Комментарии</div>
-							</div>
-							<div class="b-slider-table__column">
-								<div>Стандарт <span>3,99 USD</span></div>
-								<div class="b-slider-table__cell b-slider-table__cell_yes">Розовый фильтр</div>
-								<div class="b-slider-table__cell b-slider-table__cell_yes">Смайлики</div>
-								<div class="b-slider-table__cell b-slider-table__cell_no">Комментарии</div>
-							</div>
-	        	</div>             
-	        </div>
+		        <div class="b-slider-table__frame">
+		        	<div class="b-slider-table__table">
+		        		<div class="b-slider-table__column">
+									<div></div>
+									<div class="b-slider-table__cell b-slider-table__cell_pink"></div>
+									<div class="b-slider-table__cell b-slider-table__cell_smile"></div>
+									<div class="b-slider-table__cell b-slider-table__cell_comment"></div>
+								</div>
+								<div class="b-slider-table__column">
+									<div class="b-slider-table__cell">База <span>1,99 USD</span></div>
+									<div class="b-slider-table__cell b-slider-table__cell_pink b-slider-table__cell_yes"></div>
+									<div class="b-slider-table__cell b-slider-table__cell_smile b-slider-table__cell_no"></div>
+									<div class="b-slider-table__cell b-slider-table__cell_comment b-slider-table__cell_no"></div>
+								</div>
+								<div class="b-slider-table__column">
+									<div class="b-slider-table__cell b-slider-table__cell_badge b-slider-table__cell_hit">Стандарт <span>3,99 USD</span></div>
+									<div class="b-slider-table__cell b-slider-table__cell_pink b-slider-table__cell_yes"></div>
+									<div class="b-slider-table__cell b-slider-table__cell_smile b-slider-table__cell_yes"></div>
+									<div class="b-slider-table__cell b-slider-table__cell_comment b-slider-table__cell_no"></div>
+								</div>
+								<div class="b-slider-table__column">
+									<div class="b-slider-table__cell">Анлим <span>9,99 USD</span></div>
+									<div class="b-slider-table__cell b-slider-table__cell_pink b-slider-table__cell_yes"></div>
+									<div class="b-slider-table__cell b-slider-table__cell_smile b-slider-table__cell_yes"></div>
+									<div class="b-slider-table__cell b-slider-table__cell_comment b-slider-table__cell_yes"></div>
+								</div>
+		        	</div>             
+		        </div>
 				</section>
 			</div>
 		</main>
 		<footer>			
 			<section class="b-contacts-ext">
 				<div class="b-contacts-ext__text">
-					<p>Остались вопросы?</p> <p>Свяжитесь с нами</p>
+					<p>Остались вопросы? <br>Свяжитесь с нами</p>
 					<p>Звоните: <span>8 (800) 1000 900</span></p>
-					<p>Пишите: <span>hello@pinkapp.ru</span></p>
+					<p>Пишите: <span><a href="mailto:hello@pinkapp.ru">hello@pinkapp.ru</a></span></p>
 					<p>Приезжайте в гости: <span>Санкт-Петербург, Невский&nbsp;проспект,&nbsp;д.&nbsp;20</span></p>
 				</div>
 			</section>
 		</footer>
+      <script>
+      var link = document.querySelector('.b-drop-link');
+      var drop = document.querySelector('.b-main-menu');
+      var topline = document.querySelector('.l-head__top');
+
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+
+        if (document.querySelector('.b-drop-link_closed')) {
+	        drop.classList.add('b-main-menu_open');
+	        topline.classList.add('l-head__top_open');
+	        link.classList.remove('b-drop-link_closed'); 
+	        link.classList.add('b-drop-link_open'); 
+        }
+        else if (document.querySelector('.b-drop-link_open')) {
+		      drop.classList.remove('b-main-menu_open');
+		      topline.classList.remove('l-head__top_open');
+		      link.classList.remove('b-drop-link_open');
+		      link.classList.add('b-drop-link_closed');
+        }
+      }, false);   
+  	</script>
   </body>
  </html>
