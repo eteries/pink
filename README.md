@@ -1,3 +1,5 @@
+15.12.14 Tablet style, some improvements in the Mobile First 
+
 09.12.14 Mobile First style (new scss and css, updated html)
 
 04.12.14 Improvements in methodology, menu and promo layouts
