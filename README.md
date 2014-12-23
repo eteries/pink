@@ -1,3 +1,5 @@
+23.12.14 Desktop and extra large style, some improvements, retina images, optimisation, svg, hover states, tap.js
+
 15.12.14 Tablet style, some improvements in the Mobile First 
 
 09.12.14 Mobile First style (new scss and css, updated html)
