@@ -55,8 +55,20 @@ MOBILE FIRST
 							 url('../img/bg-header-320.jpg');
 	color: #fff;
 	background-color: $dblue;
-	background-position: 20% 169px, center top;
+	background-position: 20% 178px, center top;
 	background-repeat: no-repeat;
+	background-size: 256px 286px, 700px 488px;
+
+	@media(min--moz-device-pixel-ratio: 1.5),
+	(-o-min-device-pixel-ratio: 3/2),
+	(-webkit-min-device-pixel-ratio: 1.5),
+	(min-resolution: 1.5dppx) {
+
+		background-image: url('../img/hand-with-iphone-320x2.png'),
+							 url('../img/bg-header-320x2.jpg');
+
+	}
+
 
 	a {
 	color: #fff;
@@ -78,7 +90,7 @@ MOBILE FIRST
 
 	&__l {
 	float: left;
-	width: 50%;
+	max-width: 50%;
 	line-height: $topline;
 	}
 
@@ -173,31 +185,9 @@ MOBILE FIRST
 	padding-bottom: 40px;
 }
 
+
 .l-footer {
-
-	@include clearfix;
-	padding: 35px 0;
-
-	&__l {
-		float: left;
-		width: 31%;
-		margin-right: 3%;
-		line-height: $footerline;
-	}
-
-	&__c {
-		float: left;
-		width: 31%;
-		margin-right: 3%;
-		line-height: $footerline;
-	}
-
-	&__r {
-		float: right;
-		max-width: 32%;
-		line-height: $footerline;
-	}	
-
+	display: none;
 }
 
 /* 3.BLOCKS
@@ -223,11 +213,27 @@ MOBILE FIRST
 	height: 24px;	
 
 	&_closed {
-		background: url('../img/drop-menu.png') no-repeat center;
+		background: url('../img/icon-burger1.svg') no-repeat center;
+
+		&:hover {
+			background: url('../img/icon-burger2.svg') no-repeat center;	
+		}
+
+		&:active {
+			background: url('../img/icon-burger3.svg') no-repeat center;	
+		}
 	}
 
 	&_open {
-		background: url('../img/drop-menu_close.png') no-repeat center;
+		background: url('../img/icon-cross1.svg') no-repeat center;
+
+		&:hover {
+			background: url('../img/icon-cross2.svg') no-repeat center;	
+		}
+
+		&:active {
+			background: url('../img/icon-cross3.svg') no-repeat center;	
+		}
 	}	
 }
 
@@ -257,6 +263,16 @@ MOBILE FIRST
 
 		a {
 		text-decoration: none;
+
+			&:hover {
+			color: $crimson;
+			}
+
+			&:active {
+			color: $crimson;
+			opacity: .3;
+			}
+
 		}
 
 	}
@@ -276,13 +292,24 @@ MOBILE FIRST
 	&__link {
 	display: block;
 	padding: 15px;
-	margin: 0 20px 30px;
+	max-width: 264px;
+	margin: 0 auto 30px;
 	border: 3px solid #fff;
 	border-radius: 30px;
 	text-decoration: none;
 	font-weight: bold;
 	font-size: 18px;
 	line-height: 18px;
+
+		&:hover {
+			background-color: #fff;
+			color: $crimson;
+		}
+
+		&:active {
+			background-color: #fff;
+			color: rgba(210,40,86,.3);
+		}
 	}
 
 	&__platforms {
@@ -341,6 +368,17 @@ MOBILE FIRST
 	height: 280px;
 	margin: 0 auto 0;
 	background: url('../img/bg-iphone-with-smile-320.png') no-repeat center top;
+	background-size: 157px 320px;
+
+		@media(min--moz-device-pixel-ratio: 1.5),
+		(-o-min-device-pixel-ratio: 3/2),
+		(-webkit-min-device-pixel-ratio: 1.5),
+		(min-resolution: 1.5dppx) {
+
+			background-image: url('../img/bg-iphone-with-smile-320x2.png');
+
+		}
+
 }
 
 
@@ -394,7 +432,8 @@ MOBILE FIRST
   width: 6px;
   height: 6px;
   margin: 0 3px;
-  background: #bec2c7;
+  background: $dblue;
+  opacity: .3;
   background-clip: content-box;
   border: 3px solid transparent;
   vertical-align: top;
@@ -405,6 +444,14 @@ MOBILE FIRST
   	background: #b5b9be;
   	background-clip: content-box;
   }
+
+  :hover > & {
+		opacity: .6;
+	}
+
+	:active > & {
+		opacity: .1;
+	}
 }	
 
 /*Slider with references*/
@@ -427,7 +474,7 @@ MOBILE FIRST
 
 	&__slide-item {
 		float: left;
-		width: 33%;
+		width: 33.3%;
 		padding-bottom: 30px;
 	}
 
@@ -452,7 +499,8 @@ MOBILE FIRST
 #btn-12:checked ~ .b-slider-references__controls label[for="btn-12"],
 #btn-13:checked ~ .b-slider-references__controls label[for="btn-13"] {	
   background: none;
-  border: 3px solid $dblue; 
+  border: 3px solid $dblue;
+  opacity: 1; 
 }
 
 
@@ -509,6 +557,7 @@ MOBILE FIRST
 	}
 
 	&__cell {
+	position: relative;
 	width: 280px;
 	background: #fff;
 	border-bottom: 2px solid $table-border-color;	
@@ -516,7 +565,6 @@ MOBILE FIRST
 	padding: 15px 25px;
 	text-transform: uppercase;
 	min-height: 64px;
-	@include clearfix;
 
 	:first-child > & {		
 		border-left: 2px solid $table-border-color;
@@ -546,20 +594,26 @@ MOBILE FIRST
 		&_pink:before {
 			content: 'Розовый фильтр';
 			display: inline-block;
+			max-width: 200px;
 		}
 
 		&_smile:before {
 			content: 'Смайлики';
+			display: inline-block;
+			max-width: 200px;
 		}
 
 		&_comment:before {
 			content: 'Комментарии';
+			display: inline-block;
+			max-width: 200px;
 		}
 
 		&_yes:after {
 			content: '';
-			display: block;
-			float: right;
+			position: absolute;
+			right: 25px;
+			top: 15px;
 			width: 29px;
 			height: 22px;
 			background: url('../img/icon-yes.png') no-repeat;
@@ -567,8 +621,9 @@ MOBILE FIRST
 
 		&_no:after {
 			content: '';
-			display: block;
-			float: right;
+			position: absolute;
+			right: 25px;
+			top: 15px;
 			width: 26px;
 			height: 26px;
 			background: url('../img/icon-no.png') no-repeat;
@@ -581,13 +636,14 @@ MOBILE FIRST
 			left: 0;
 			width: 74px;
 			height: 74px;
-			background: linear-gradient(-45deg, transparent 53%, $crimson 53%, $crimson 82%, transparent 80%);
+			background: linear-gradient(-45deg, transparent 53%, $crimson 53%, $crimson 82%, transparent 82%);
 		}
 
 		&_hit:after {
 			content: "Хит";
 			position: absolute;
 			color: #fff;
+			text-transform: uppercase;
 			top: 12px;
 			left: 11px;
 			font-size: 14px;
@@ -623,6 +679,7 @@ MOBILE FIRST
 #btn-23:checked ~ .b-slider-table__controls label[for="btn-23"] {	
   background: #fff;
   border: 3px solid $dblue; 
+  opacity: 1; 
 }
 
 
@@ -653,6 +710,7 @@ MOBILE FIRST
 	&__text {
 	position: relative;
 	margin-bottom: -40px;
+	text-align: center;
 	z-index: 1;
 
 		p {
@@ -670,6 +728,9 @@ MOBILE FIRST
 
 		p:nth-child(4) {		
 			margin-bottom: 30px;
+			max-width: 280px;
+			margin-left: auto;
+			margin-right: auto;
 		}
 
 		&:after {
@@ -685,6 +746,7 @@ MOBILE FIRST
 			transform: skewY(12deg);
 			background: #fff;
 			z-index: -1;
+			border-right: 1px solid #fff;
 		}
 
 		&:before {
@@ -700,16 +762,25 @@ MOBILE FIRST
 			transform: skewY(-12deg);
 			background: #fff;
 			z-index: -1;
+			border-left: 1px solid #fff;
 		}
 
 		a {
 			color: $crimson;
 			text-decoration: none;
-		}
 
-		a:hover {
-			text-decoration: underline;
-		}
+				&:hover {
+							text-decoration: underline;
+							color: #283645;
+						}
+
+				&:active {
+							text-decoration: underline;
+							color: #283645;
+							opacity: .3;
+						}
+
+		}	
 
 	}
 
@@ -723,9 +794,6 @@ MOBILE FIRST
 
 }
 
-.l-footer {
-	display: none;
-}
 
 /* ---------------------------------------------------------------------
 
@@ -743,7 +811,7 @@ $topline: 59px;
 ---------------------------------------------------------------------- */
 
 	.b-page {
-		max-width: 900px;
+		max-width: 940px;
 	}
 
 
@@ -760,6 +828,18 @@ $topline: 59px;
 		background-repeat: no-repeat;
 		background-size: 700px 545px, 1200px 729px;
 		min-height: 729px;
+
+		@media(min--moz-device-pixel-ratio: 1.5),
+		(-o-min-device-pixel-ratio: 3/2),
+		(-webkit-min-device-pixel-ratio: 1.5),
+		(min-resolution: 1.5dppx) {
+
+			background-image: url('../img/hand-with-iphone-700x2.png'),
+								 url('../img/bg-header-700x2.jpg');
+
+		}
+
+
 
 			&__top {
 				padding: 25px 45px;
@@ -796,7 +876,6 @@ $topline: 59px;
 		&__download {
 				padding: 0 20px 0 20px;
 				margin: 0;
-				width: 50%;
 				max-width: 320px;
 				padding-top: 35px;	
 				padding-bottom: 40px;
@@ -814,9 +893,40 @@ $topline: 59px;
 			}
 	}
 
+
 	.l-footer {
-		display: block;
+	display: block;
+	@include clearfix;
+	padding: 35px 4%;
+
+	&__l {
+		float: left;
+		width: 31%;
+		min-width: 150px;
+		height: $footerline; 
+		line-height: $footerline;
+		vertical-align: middle;
 	}
+
+	&__c {
+		float: left;
+		max-width: 31%;
+		min-width: 190px;
+		height: $footerline; 
+		line-height: $footerline;
+		vertical-align: middle;
+	}
+
+	&__r {
+		float: right;
+		width: 32%;
+		min-width: 200px;
+		height: $footerline; 
+		line-height: $footerline;
+		vertical-align: middle;
+	}	
+
+}
 
 	.l-main-row3 {
 	padding-top: 5px;
@@ -838,15 +948,36 @@ $topline: 59px;
 		width: 145px;
 		height: 40px;	
 		background: url('../img/logo-pink-2.png') no-repeat;
+		background-size: 145px 40px;
+		display: inline-block;		
+
+			@media(min--moz-device-pixel-ratio: 1.5),
+			(-o-min-device-pixel-ratio: 3/2),
+			(-webkit-min-device-pixel-ratio: 1.5),
+			(min-resolution: 1.5dppx) {
+
+				background-image: url('../img/logo-pink-2-x2.png');
+
+			}
 		}	
 
 	&_footer {
 		
 		.b-logo__logo {
-			margin: 0;
+			margin: 5px 0 12px;
 			width: 145px;
 			height: 40px;	
 			background: url('../img/logo-pink-footer.png') no-repeat;
+			background-size: 145px 40px;	
+
+			@media(min--moz-device-pixel-ratio: 1.5),
+			(-o-min-device-pixel-ratio: 3/2),
+			(-webkit-min-device-pixel-ratio: 1.5),
+			(min-resolution: 1.5dppx) {
+
+				background-image: url('../img/logo-pink-footer-x2.png');
+
+			}
 		}	
 	}
 }
@@ -894,6 +1025,16 @@ $topline: 59px;
 		bottom: 0;
 		left: 40px;
 		background: url('../img/bg-iphone-with-smile-700.png') no-repeat center top;
+		background-size: 268px 481px;
+
+			@media(min--moz-device-pixel-ratio: 1.5),
+			(-o-min-device-pixel-ratio: 3/2),
+			(-webkit-min-device-pixel-ratio: 1.5),
+			(min-resolution: 1.5dppx) {
+
+				background-image: url('../img/bg-iphone-with-smile-700x2.png');
+
+			}
 	}
 
 	.b-research {
@@ -936,7 +1077,13 @@ $topline: 59px;
 
 			a {
 				color: $crimson;
-			}
+
+					&:hover {
+						text-decoration: none;
+						color: #283645;
+					}																
+
+				}
 	}
 
 	.b-reference {
@@ -1019,8 +1166,7 @@ $topline: 59px;
 		}
 
 		&_yes:after, &_no:after  {
-			float: none;
-			margin: 0 auto;
+			left: 45%;
 		}
 
 		&_badge:before {
@@ -1040,7 +1186,6 @@ $topline: 59px;
 
 	.b-contacts-ext {
 
-		text-align: center;
 		background: url('../img/map-700.png') no-repeat center bottom;
 		padding-bottom: 415px;
 		z-index: -2;
@@ -1052,7 +1197,7 @@ $topline: 59px;
 		z-index: 1;
 
 			&:after {
-				height: 22%;
+				height: 25%;
 				width: 50%;
 				left: 0;
 				bottom: -3%;
@@ -1060,7 +1205,7 @@ $topline: 59px;
 			}
 
 			&:before {
-				height: 22%;
+				height: 25%;
 				width: 50%;
 				right: 0;
 				bottom: -3%;
@@ -1097,14 +1242,16 @@ $topline: 59px;
 
 
 	.b-social {
+		display: inline-block;
+	
 
 	&__icon {
 		display: inline-block;
-		width: 50px;
-		height: 50px;
-		line-height: 50px;
+		width: 44px;
+		height: 44px;
+		line-height: 44px;
 		text-align: center;
-		border: 2px solid #e9ebec;
+		border: 3px solid #e9ebec;
 		border-radius: 50%;
 		margin-right: 12px;
 
@@ -1112,33 +1259,46 @@ $topline: 59px;
 			margin-right: 0;
 		}
 
-		img {
+		&:hover {
+			border-color: #283645;
+		}
+
+		&:active {
+			border-color: #283645;
+			opacity: .3;
+		}
+
+		svg {
 			position: relative;
-			fill: red;
+			fill: $crimson;
+
+			:active > & {
+				opacity: .3;
+			}
 		}
 
 		&_tw {
 
-			& img {
-			position: relative;
+			& svg {
 			top: 2px;
+			clip-rule:	evenodd;
+			fill-rule:	evenodd;
 			}
 
 		}
 
 		&_fb {
 
-			& img {
-			position: relative;
-			top: 4px;
+			& svg {
+			top: 4px;	
 			}
 		}
 
 		&_yt {
 
-			& img {
-			position: relative;
+			& svg {
 			top: 2px;
+			left: 2px;
 			}
 
 		}
@@ -1146,15 +1306,30 @@ $topline: 59px;
 
 }
 
-.b-copyright {
+.b-copyright {	
+	display: inline-block;
 
-	img {
+	svg {
 		vertical-align: middle;
+		fill: $crimson;
+
+		&:hover {
+			fill: #283645;
+		}
+
+		&:active  {
+			fill: #283645;
+			opacity: .3;
+		}	
 	}
 
 	a {
 		display: inline-block;
 		margin: 0 12px;
+
+		&:last-child {
+			margin-right: 0;
+		}
 	}
 
 }
@@ -1166,11 +1341,766 @@ DESKTOP
 
 ---------------------------------------------------------------------- */
 
-/* .l-head {
+@media screen and (min-width: 940px) {
+
+
+$topline: 59px;
+$footerline: 57px;
+
+
+/* 1.BODY
+---------------------------------------------------------------------- */
+
+	.b-page {
+		max-width: 1280px;
+	}
+
+
+/* 2.LAYOUT
+---------------------------------------------------------------------- */
+
+.l-head {
+	background: url('../img/hand-with-iphone-1200.png'),
+							 url('../img/bg-header-1200.jpg');
+	color: #fff;
+	background-color: $dblue;
+	background-position: 65% 100%, center top;
+	background-repeat: no-repeat;
+	background-size: 1050px 645px, 1282px 855px;
+	min-height: 855px;
+
+		@media(min--moz-device-pixel-ratio: 1.5),
+		(-o-min-device-pixel-ratio: 3/2),
+		(-webkit-min-device-pixel-ratio: 1.5),
+		(min-resolution: 1.5dppx) {
+
+			background-image: url('../img/hand-with-iphone-1200x2.png'),
+								 url('../img/bg-header-1200x2.jpg');
+
+		}
+
+	&__top_open {
+		display: none;
+	}
+
+	&__l {
+		float: left;
+		max-width: 20%;
+		line-height: $topline;
+	}
+
+	&__c {
+		position: static;
+		float: right;
+		max-width: 80%;
+		line-height: $topline; 
+	}
+
+	&__r {
+	display: none;
+	}	
+
+}
+
+
+.l-wrapper {
+	max-width: 940px;
+	margin: 0 auto;
+}
+
+.l-promo {
+
+	&__slogan {
+			width: 40%;
+			max-width: 240px;
+			padding: 0 45px 0 45px;
+			margin: 0;
+			text-align: center;
+			margin-top: 110px;
+			margin-bottom: 10px;
+	}
+
+
+	&__download {
+			padding: 0;
+			margin: 0;
+			max-width: 330px;
+			padding-top: 35px;	
+			padding-bottom: 40px;
+			background: transparent;
+	}
+}
+
+.l-main-row1 {
+	padding-bottom: 85px;
+
+	&:after {
+	content: "";
+	position: absolute;
+	height: 60%;
+	width: 100%;
+	bottom: -40%;
+	-webkit-transform: skewY(-4.5deg);
+	-ms-transform: skewY(-4.5deg);
+	-o-transform: skewY(-4.5deg);
+	transform: skewY(-4.5deg);
+	background: $main-sections-bg;
+	}
+}
+
+
+.l-main-row2 {
+	min-height: 420px;
+
+		&__c {
+			text-align: left;
+			margin: 0;
+			max-width: 100%;
+		}
+}
+
+.l-main-row3 {
+	padding-top: 0;
+	padding-bottom: 95px;
+
+	&:after {
+	content: "";
+	position: absolute;
+	height: 16%;
+	width: 100%;
+	bottom: -85px;
+	-webkit-transform: skewY(-4deg);
+	-ms-transform: skewY(-4deg);
+	-o-transform: skewY(-4deg);
+	transform: skewY(-4deg);
+	background: $main-sections-bg;
+	}
+}
+
+.l-main-row3a {
+		background-color: $main-sections-bg;
+}
+
+.l-main-row4 {
+	padding-top: 38px;
+	padding-bottom: 75px;
+}
+
+.l-footer {
+	padding: 70px 0;
+
+	&__l {
+		float: left;
+		width: 33%;
+		height: $footerline;
+		margin-right: 7%;
+		line-height: $footerline;
+		vertical-align: middle;
+	}
 
 	&__c {
 		float: left;
-		max-width: 50%;
-		line-height: $topline; 
+		width: 33%;
+		height: $footerline;
+		margin-right: 4%;
+		line-height: $footerline;
+		vertical-align: middle;
 	}
-} */
+
+	&__r {
+		float: right;
+		max-width: 23%;
+		height: $footerline;
+		line-height: $footerline;
+		vertical-align: middle;
+	}	
+
+}
+
+
+
+/* 3. BLOCKS
+---------------------------------------------------------------------- */
+
+.b-logo {  
+
+	&__logo{
+		margin: 0;
+		width: 146px;
+		height: 40px;	
+		background: url('../img/logo-pink-3.png') no-repeat;
+		background-size: 146px 40px;
+
+			@media(min--moz-device-pixel-ratio: 1.5),
+			(-o-min-device-pixel-ratio: 3/2),
+			(-webkit-min-device-pixel-ratio: 1.5),
+			(min-resolution: 1.5dppx) {
+
+				background-image: url('../img/logo-pink-3-x2.png');
+
+			}
+		}	
+
+		&_footer {
+		display: inline-block;
+		
+		.b-logo__logo {
+			margin: 2px 0 15px;
+			width: 146px;
+			height: 40px;	
+			background: url('../img/logo-pink-3-footer.png') no-repeat 0 50%;
+			background-size: 146px 40px;
+
+				@media(min--moz-device-pixel-ratio: 1.5),
+				(-o-min-device-pixel-ratio: 3/2),
+				(-webkit-min-device-pixel-ratio: 1.5),
+				(min-resolution: 1.5dppx) {
+
+					background-image: url('../img/logo-pink-3-footer-x2.png');
+
+				}
+		}	
+	}
+
+}
+
+.b-main-menu {
+	display: block;
+	width: 100%;
+
+	&_open {
+		display: none;
+	}
+
+	&__list {
+	list-style: none;
+	background: none;
+	padding: 0;
+	margin: 0;
+	}
+
+	&__item {
+	display: inline-block;
+	border: none;
+	padding: 16px 0 16px 65px;
+	font-size: 18px;
+	line-height: 18px;
+	font-weight: normal;
+	text-align: left;
+	text-transform: none;
+
+		a {
+		text-decoration: none;
+		padding-bottom: 10px;
+
+			&:hover {
+			border-bottom: 2px solid #fff;
+			color: #fff;
+			}
+
+			&:active {
+			border-bottom: none;
+			color: #fff;
+			opacity: .3;
+			}
+
+		}
+
+	}
+
+}
+
+	.b-slogan {		
+	 	font-size: 50px;
+	 	line-height: 1.2em;
+	}
+
+
+	.b-download {
+
+			&__link {				
+				padding: 15px 35px;
+				margin-left: 0;
+				margin-right: 0;
+				font-size: 21px;
+			}
+
+			&__platforms {
+				 	font-size: 18px;
+				 	margin: 30px 10px;
+			}
+	}
+
+	.b-icons {
+	margin: 70px auto;
+	}
+
+	.b-offer {
+		font-size: 50px;
+
+		p:first-child {
+			margin: 50px 0 0;
+		}
+
+		p:last-child {
+			margin: 0 auto 125px;
+			max-width: 460px;
+		}
+	}
+
+
+	.b-smile-phone {
+		display: none;
+	}
+
+
+	.b-benefits {
+		margin: 0;
+		padding: 0 0 10px;
+		width: 100%;
+		list-style: none;
+		@include clearfix;
+
+		&__item {
+			float: left;
+			position: relative;
+			width: 300px;
+			margin: 0;
+			margin-right: 20px;
+			padding: 0;
+			text-align: center;
+		}
+
+		&__item:last-child {
+			margin-right: 0;
+		}
+
+		&__item:before {
+			position: absolute;
+			display: block;
+			content: '';
+			width: 274px;
+			height: 310px;
+			top: -145px;
+			left: 13px;
+			background-image: url('../img/iphone-screen-border.png'),
+												url('../img/iphone-screen-2-2@1x.png');
+			background-position: 50% 100%, 50% 0;
+			background-repeat: no-repeat;
+			background-size: 294px 17px, 190px 300px;
+
+		@media(min--moz-device-pixel-ratio: 1.5),
+		(-o-min-device-pixel-ratio: 3/2),
+		(-webkit-min-device-pixel-ratio: 1.5),
+		(min-resolution: 1.5dppx) {
+
+			background-image: url('../img/iphone-screen-border.png'),
+												url('../img/iphone-screen-2-2@2x.png');
+
+		}
+
+		}
+
+		&__item:first-child:before {
+			background-image: url('../img/iphone-screen-border.png'),
+												url('../img/iphone-screen-2-1@1x.png');		
+
+		@media(min--moz-device-pixel-ratio: 1.5),
+		(-o-min-device-pixel-ratio: 3/2),
+		(-webkit-min-device-pixel-ratio: 1.5),
+		(min-resolution: 1.5dppx) {
+
+			background-image: url('../img/iphone-screen-border.png'),
+												url('../img/iphone-screen-2-1@2x.png');
+
+		}
+		}
+
+		&__item:last-child:before {
+			background-image: url('../img/iphone-screen-border.png'),
+												url('../img/iphone-screen-2-3@1x.png');
+
+			@media(min--moz-device-pixel-ratio: 1.5),
+			(-o-min-device-pixel-ratio: 3/2),
+			(-webkit-min-device-pixel-ratio: 1.5),
+			(min-resolution: 1.5dppx) {
+
+				background-image: url('../img/iphone-screen-border.png'),
+													url('../img/iphone-screen-2-3@2x.png');
+
+			}
+		}
+
+
+		h3 {
+		margin: 210px 0 25px;
+		padding: 0 35px;
+		font-size: 30px;
+		line-height: 30px;
+		}
+
+		p {
+		margin: 0 0 15px;
+		padding: 0 30px;
+		font-size: 18px;
+		line-height: 30px;
+		}
+
+	}
+
+	.b-research {
+		margin: 0;
+		margin-bottom: 20px;
+		background-image:  url('../img/timer-4.svg');		
+		padding: 45px 20px 45px 365px;
+		background-color: $main-sections-bg;
+		background-size: 300px 348px;
+		background-position: 0 45px;
+		min-height: 360px;
+
+			&:before {
+				width: 218px;
+				height: 216px;
+				line-height: 216px;
+				top: 125px; 
+				left: 30px;
+				font-size: 120px;
+				margin-right: 56px;
+			}
+
+			h3 {
+				font-size: 30px;
+				line-height: 30px;
+				width: 100%;
+				margin: 90px 0 25px;
+			}
+
+			p {
+				font-size: 18px;
+				line-height: 30px;
+			}
+
+			a {
+				margin-top: 25px;
+				font-size: 18px;				
+			}
+	}
+
+.b-reference {
+		position: relative;
+		padding-top: 150px;
+		padding-left: 100px;
+		padding-right: 100px;
+
+		h3 {
+			font-size: 24px;
+			line-height: 30px;
+			font-weight: 700;
+		}
+
+		p {
+			font-size: 18px;
+			line-height: 30px;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		span {
+			display: block;
+			font-size: 18px;
+			line-height: 30px;
+		}
+	}
+
+	.b-reference:before {
+		position: absolute;
+		display: block;
+		content: "\201C";
+		left: 370px;
+		top: 130px;
+		font-family: Georgia;
+		font-size: 240px;
+		line-height: 36px;
+		width: 150px;
+		height: 150px;
+		color: #efefef; 
+	}
+
+	.b-slider-references__link {
+	position: absolute;
+	top: 50%;
+	color: #000;
+
+		&:before {
+				display:block;
+	  		content: '';
+	  		width: 28px;
+	  		height: 28px;
+			  -webkit-transform: rotate(-45deg);
+			      -ms-transform: rotate(-45deg);
+			          transform: rotate(-45deg);
+		}
+ 
+
+  	&_left {
+  		left: 0;
+
+  		&:before {
+	  		border-left: 2px solid #bec2c7;
+	  		border-top: 2px solid #bec2c7;
+  		}
+  	}
+
+  	&_right {
+  		right: 0;
+
+  		&:before {
+  		border-right: 2px solid #bec2c7;
+  		border-bottom: 2px solid #bec2c7;
+  		}
+  	}
+	}
+
+	/* Table */
+
+	.b-slider-table {
+		padding: 0 0 20px;	
+
+		&__frame {			
+			width: 100%;			
+		}	
+
+		&__table {
+
+		width: 100%;	
+	  -webkit-transform: translate(0) !important;  
+	      -ms-transform: translate(0) !important;  
+	          transform: translate(0) !important; 
+	
+	 
+		 	& > div:first-child {
+					display: block;	
+			}
+
+		 	& > div:not(:first-child) {
+
+				[class *='pink']:before, [class *='smile']:before, [class *='comment']:before {
+					content: ' ';
+					display: block;
+				}	
+			}	
+		}
+
+		&__column {
+				width: 25%;			
+		}
+
+		&__controls {
+				display: none;		
+			}
+
+		&__cell {
+
+		width: 100%;
+		text-transform: none;	
+		padding: 14px 15px;
+		min-height: 60px;		
+		font-size: 18px;	
+
+		&_head {					
+			padding: 20px 25px;
+			font-size: 18px;
+			min-height: 100px;
+			text-transform: uppercase;	
+
+			:first-child > & {
+				background: none;
+				border: none;
+			}
+
+			span {
+			font-size: 24px;
+			}
+		}
+
+		&_yes:after, &_no:after  {
+			left: 45%;
+		}
+
+		&_badge:before {
+			width: 60px;
+			height: 60px;			
+			background: linear-gradient(-45deg, transparent 50%, $crimson 50%, $crimson 82%, transparent 82%);
+		}
+
+		&_hit:after {
+				top: 6px;
+				left: 7px;
+		}
+	}
+}	
+
+
+	/* Footer blocks */
+
+	.b-contacts-ext {
+
+		text-align: center;
+		background: url('../img/map-full.png') no-repeat center bottom;
+		padding-bottom: 510px;
+		z-index: -2;
+
+		&__wrapper {
+			margin: 0 auto;
+			max-width: 940px;
+			@include clearfix;
+		}
+
+		&__text {
+		padding: 10px;
+		padding-top: 15px;
+		margin-bottom: -60px;
+		z-index: 1;
+
+			&:after {
+				height: 65%;
+				width: 50%;
+				left: 0;
+				bottom: -3%;
+				z-index: -1;
+				border-right: 1px solid #fff;
+			}
+
+			&:before {
+				height: 65%;
+				width: 50%;
+				right: 0;
+				bottom: -3%;
+				z-index: -1;
+				border-left: 1px solid #fff;
+			}
+
+			p:first-child {			
+				font-size: 50px;
+				line-height: 60px;
+				margin-bottom: 35px;
+			}
+
+			p:nth-child(2) {			
+				float: left;
+				width: 300px;
+				padding: 0;
+				margin-right: 20px;
+			}
+
+			p:nth-child(3) {			
+				float: right;
+				width: 300px;
+				padding: 0;
+			}
+
+			p:nth-child(4) {
+				padding: 0;	
+				float: left;
+				width: 300px;
+				margin-right: 20px;
+				clear: none;
+			}
+		}
+
+		span {
+			margin-top: 20px;
+		}
+	}
+
+	.b-copyright {
+
+	font-size: 18px;
+	line-height: 18px;
+
+	a {
+		display: inline-block;
+		margin: 0 10px;
+	}
+
+}
+
+
+} /* end of query */
+
+/* ---------------------------------------------------------------------
+
+EXTRA LARGE
+
+---------------------------------------------------------------------- */
+
+@media screen and (min-width: 1280px) {
+
+	.b-page {
+		max-width: 2560px;
+	}
+
+	.l-head {
+		background: url('../img/hand-with-iphone-1200.png'),
+								 url('../img/bg-header-full.jpg');
+		background-position: 65% 100%, center center;
+		background-repeat: no-repeat;
+		background-size: 1050px 645px, cover;
+
+		@media(min--moz-device-pixel-ratio: 1.5),
+		(-o-min-device-pixel-ratio: 3/2),
+		(-webkit-min-device-pixel-ratio: 1.5),
+		(min-resolution: 1.5dppx) {
+
+			background-image: url('../img/hand-with-iphone-1200x2.png'),
+								 url('../img/bg-header-fullx2.jpg');
+
+		}
+	}
+
+
+	.l-main-row1 {
+		
+		&:after {
+		height: 60%;
+		bottom: -40%;
+		-webkit-transform: skewY(-3.5deg);
+		-ms-transform: skewY(-3.5deg);
+		-o-transform: skewY(-3.5deg);
+		transform: skewY(-3.5deg);
+		}
+	}
+
+	.l-main-row3 {
+		&:after {
+		content: "";
+		-webkit-transform: skewY(-3.5deg);
+		-ms-transform: skewY(-3.5deg);
+		-o-transform: skewY(-3.5deg);
+		transform: skewY(-3.5deg);
+		}
+	}
+
+	.b-contacts-ext {
+		background: url('../img/map-full1.png') no-repeat center bottom;
+
+		&__text {
+
+			&:after {
+				-webkit-transform: skewY(7deg);
+				-ms-transform: skewY(7deg);
+				-o-transform: skewY(7deg);
+				transform: skewY(7deg);
+			}
+
+			&:before {
+				-webkit-transform: skewY(-7deg);
+				-ms-transform: skewY(-7deg);
+				-o-transform: skewY(-7deg);
+				transform: skewY(-7deg);
+			}
+		}
+	}
+
+}
+
